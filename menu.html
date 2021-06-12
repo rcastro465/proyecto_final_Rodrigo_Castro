@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css"> <!--ESTILOS generales-->
+    <link rel="stylesheet" href="css/movil.css" media="(min-width: 100px) and (max-width:500px)"><!--ESTILOS css movil-->
+    <link rel="stylesheet" href="css/tablet.css" media="(min-width: 501px) and (max-width:999px)"><!--ESTILOS css tablet-->
+    <link rel="icon" type="image/png" sizes="16x16" href="multimedia/favicon-32x32.png"><!-- icono favicon -->
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script><!-- iconos wsp y RR.SS-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script><!--ESTILOS Alerts con estilos-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet"> <!--tipo de fuente-->
+
+
+    <title>Menú</title>
+</head>
+<body>
+    <header>
+        <!--menu principal-->
+        <nav class="contenedor">
+    
+      <div class="logo">
+          <img src="multimedia/12105995_896986323725900_2681271618348409823_n.png" alt="">
+      </div>
+      <div class="enlaces">
+        <a href="index.html">INICIO</a>
+        <a href="#">MENÚ</a>
+        <a href="sucursales.html">SUCURSALES</a>
+        <a href="nosotros.html">QUIENES SOMOS</a>
+        <a href="contacto.html">CONTACTO</a>
+        <a class="cta" href="#">ENTRAR <img class="user-icon" src="multimedia/user-pin-regular-48.png"></a>
+        <a class="cta" href="#miModalcar"><img class="carro-icon" src="multimedia/cart-regular-48.png"></a>
+       </div> 
+    
+     <div class="hamburguesa">
+     <img src="multimedia/menu-alt-right-regular-48.png" alt="" id="hamburguesa">
+      </div>
+    
+          </nav>
+        <!-- fin menu principal-->
+        </header>
+
+        <div class="menu">
+            <figure class="menu-inicio">
+            <img src="multimedia/menu-inicio.png">
+        </figure>
+        
+        </div>
+
+    
+<!--MODAL login-->
+<div class="modal-container" id="modal-container">
+  <form action="#" method="post">
+ <div class="modal modal-close" id="modal">
+ <p class="close">X</p>
+ <img class="img-login" src="multimedia/prueba-logo.png" alt="">
+
+ <h2>Iniciar sesión</h2>
+ <h6>¿Eres nuevo en este sitio?<a href="#miModalNewRegistro" class="close3"> Regístrate</a></h6>
+  
+ <label class="label-log">Email</label>
+ <input class="input-text" type="email" placeholder="Ingrese su email" required name="user" id="user-log">
+ <p id="msguser" class="alerta"></p>
+ <label class="label-log">Contraseña</label>
+ <input class="input-text" type="password" placeholder="Ingrese su Contraseña" required name="pass" id="pass-log">
+ <p id="msgpass" class="alerta"></p>
+ <input class="btn-login" type="button" name="button" value="Ingresar" onclick="ValidarLogin()" id="btn-log">
+ <a href="#miModalPass" class="close2">¿Olvidó su contraseña?</a>
+
+ </div>
+</form>
+</div>
+<!--FIN login-->
+
+<!--modal recuperar contraseña-->
+<div id="miModalPass" class="modal-2">
+  <div class="modal-contenido-car2" id="modal-contenido-car2">
+   <form action="#" method="post">
+    <div class="descrip">
+      <a class="cerrar-modal-pass" href="#">X</a>
+      <img class="menu-modal-img" src="multimedia/prueba-logo.png" alt="">
+    <h2 class="title-modalm">Recuperar contraseña</h2>
+    <p>Email:</p>
+    <div class="boton-restore">
+    <input class="email-reset" type="email" placeholder="Ingrese email" id="email-pass">
+    </div>
+    <p>A continuación, procederá a resetear su contraseña.
+      Recuerde que para recuperar la contraseña , su correo debe haber sido creado o actualizado.</p>
+      <div class="boton-restore">
+    <input class="button-reset" type="button" value="Recuperar Contraseña" onclick="Recuperar_pass()" id="btn-restore-pass">
+    <p id="msgrecuperar" class="alerta"></p>
+    </div>
+  </div>
+</form>
+  </div>  
+</div>
+<!--modal recuperar contraseña-->
+
+
+<!--modal nuevo registro-->
+<div id="miModalNewRegistro" class="modal-2">
+  <div class="modal-contenido-car3" id="modal-contenido-New">
+   <form action="#" method="post">
+    <div class="descrip-reg">
+      <a class="cerrar-modal-pass" href="#">X</a>
+      <img class="menu-modal-img-new" src="multimedia/prueba-logo.png" alt="">
+    <h2 class="title-modalm-new">NUEVOS CLIENTES</h2>
+    <p>Email: <input type="email" required name="nombrecompleto" maxlength="30" class="input-registro" id="email-new"></p>
+    <p id="msgnew" class="alerta-new"></p>
+    <p>Contraseña: <input type="password" maxlength="20" required name="nombrecompleto" class="input-registro" id="pass-1"></p>
+    <p id="msgnewp1" class="alerta-new"></p>
+    <p>Confirmar Contraseña: <input type="password" maxlength="20" required name="nombrecompleto" class="input-registro" id="pass-2"></p>
+    <p id="msgnewp2" class="alerta-new"></p>
+    <p>Nombre: <input type="text" name="nombrecompleto" maxlength="30" required class="input-registro" id="nombrenew"></p>
+    <p id="msgnewname" class="alerta-new"></p>
+    <p>Apellido: <input type="text" name="nombrecompleto" maxlength="30" required class="input-registro" id="apellidonew"></p>
+    <p id="msgnewape" class="alerta-new"></p>
+    <p>Rut: <input type="text" name="nombrecompleto" maxlength="10" required class="input-registro" id="rutnew"></p>
+    <p id="msgnewrut" class="alerta-new"></p>
+
+   <p >Sexo*<select class="option-sex" id="sexoption">
+     <option>Femenino</option>
+     <option>Masculino</option>
+   </select></p>
+   <input type="checkbox" name="news" id="checknews"><label class="check-sex" > Deseo recibir ofertas por e-mail </label>
+      <div class="boton-restore">
+    <input class="button-new-reg" type="button" value="Crear Cuenta" onclick="CrearCuenta()" id="btn-new-registro">
+    
+    </div>
+  </div>
+</form>
+  </div>  
+</div>
+<!--modal recuperar contraseña-->
+
+
+<!--client width-->
+<label class="slider-contenedora"></label>
+  <label class="slider-test"></label>
+<!--fin client width-->
+
+
+
+        <!--barra de productos-->
+<div class="horizontal-scroll-contenedor">
+    <a href="#hambur"><p>HAMBURGUESAS</p></a>
+    <a href="#pizzas"><p>PIZZAS</p></a>
+    <a href="#churra"><p>CHURRASCOS</p></a>
+    <a href="#veggie"><p>HAMBURGUESAS VEGANAS</p></a>
+    <a href="#tacos"><p>TACOS</p></a>
+    <a href="#chorri"><p>CHORRILLANAS</p></a>
+    <a href="#bebi"><p>BEBESTIBLES</p></a>
+
+
+</div>
+<!-- fin barra de productos-->
+
+<!--hamburguesas-->
+<a name="hambur" class="titulos-categoria"><p>HAMBURGUESAS</p></a>
+<div class="container-hambur">
+    <a href="#miModal">
+    <div class="section-hambur">
+    <div class="p1">
+       <div class="p2">
+     <p name="golosa" class="name-prod">La Golosa</p> 
+     <p class="precio">$5.990</p>  
+     </div>
+     <img class="img-menus" src="multimedia/chupisso.jpeg">
+   </div>
+</div>
+ </a>
+
+ <a href="#miModal2">
+<div class="section-hambur">
+    <div class="p1">
+        <div class="p2">
+     <p name="clasica" class="name-prod">Clásica</p> 
+     <p class="precio">$5.990</p>  
+     </div>
+     <img class="img-menus" src="multimedia/clasica.jpeg">
+   </div>
+</div> 
+</a>
+
+<a href="#miModal3">
+<div class="section-hambur">
+    <div class="p1">
+        <div class="p2">
+     <p name="champ" class="name-prod">La champiñona</p> 
+     <p class="precio">$5.990</p>  
+     </div>
+     <img class="img-menus" src="multimedia/champinon.jpeg">
+   </div>
+</div> 
+</a>
+
+</div>
+
+<div class="container-hambur">
+
+    <a href="#miModal4">
+    <div class="section-hambur">
+        <div class="p1">
+            <div class="p2">
+         <p name="chesse" class="name-prod">Cheeseburger</p> 
+         <p class="precio">$4.990</p>  
+         </div>
+         <img class="img-menus" src="multimedia/queso.png">
+       </div>
+    </div> 
+    </a>
+    <a href="#miModal5">
+    <div class="section-hambur">
+        <div class="p1">
+            <div class="p2">
+         <p name="camarona" class="name-prod">Camarona</p> 
+         <p class="precio">$6.990</p>  
+         </div>
+         <img class="img-menus" src="multimedia/camarona.png">
+       </div>
+    </div> 
+    </a>
+    <a href="#miModal6">
+    <div class="section-hambur">
+        <div class="p1">
+            <div class="p2">
+         <p name="mexicana" class="name-prod">Mexicana</p> 
+         <p class="precio">$5.990</p>  
+         </div>
+         <img class="img-menus" src="multimedia/mexicana.png">
+       </div>
+    </div> 
+    
+    </a>
+    </div>
+
+    <div class="container-hambur">
+
+        <a href="#miModal7">
+        <div class="section-hambur">
+            <div class="p1">
+                <div class="p2">
+             <p name="chilean" class="name-prod">Chilean Burger</p> 
+             <p class="precio">$10.990</p>  
+             </div>
+             <img class="img-menus" src="multimedia/hamburguesa-muestra2.png">
+           </div>
+        </div> 
+        </a>
+
+        <a href="#miModal8">
+        <div class="section-hambur">
+            <div class="p1">
+                <div class="p2">
+             <p name="onion" class="name-prod">Onion Burger</p> 
+             <p class="precio">$5.990</p>  
+             </div>
+             <img class="img-menus" src="multimedia/cebollas.png">
+           </div>
+        </div> 
+        </a>
+
+        <a href="#miModal9">
+        <div class="section-hambur">
+            <div class="p1">
+                <div class="p2">
+             <p name="marytierra" class="name-prod">Mar y Tierra</p> 
+             <p class="precio">$5.990</p>  
+             </div>
+             <img class="img-menus" src="multimedia/marytierra.png">
+           </div>
+        </div> 
+        </a>
+        
+        </div>
+<!-- fin hamburguesas-->
+        <a name="pizzas" class="titulos-categoria"><p>PIZZAS</p></a>
+<div class="container-hambur">
+
+    <a href="#miModal10">
+    <div class="section-hambur">
+        <div class="p1">
+            <div class="p2">
+         <p class="name-prod">Pizza 4 Carnes</p> 
+         <p class="precio">$7.990</p>  
+         </div>
+         <img class="img-menus" src="multimedia/pizza1.png">
+       </div>
+    </div> 
+    </a>
+
+    <a href="#miModal11">
+    <div class="section-hambur">
+        <div class="p1">
+            <div class="p2">
+         <p class="name-prod">Pizza Veggie</p> 
+         <p class="precio">$7.990</p>  
+         </div>
+         <img class="img-menus" src="multimedia/pizza2.png">
+       </div>
+    </div> 
+    </a>
+
+    <a href="#miModal12">
+    <div class="section-hambur">
+        <div class="p1">
+            <div class="p2">
+         <p class="name-prod">Napolitana</p> 
+         <p class="precio">$7.990</p>  
+         </div>
+         <img class="img-menus" src="multimedia/pizza3.png">
+       </div>
+    </div> 
+    
+     </a>
+    </div>
+   
+    <div class="container-hambur">
+        
+        <a href="#miModal13">
+        <div class="section-hambur">
+            <div class="p1">
+                <div class="p2">
+             <p class="name-prod">Pizza Duo</p> 
+             <p class="precio">$7.990</p>  
+             </div>
+             <img class="img-menus" src="multimedia/pizza4.png">
+           </div>
+        </div> 
+        </a>
+
+        <a href="#miModal14">
+        <div class="section-hambur">
+            <div class="p1">
+                <div class="p2">
+             <p class="name-prod">Pizza Peperoni</p> 
+             <p class="precio">$7.990</p>  
+             </div>
+             <img class="img-menus" src="multimedia/pizza5.png">
+           </div>
+        </div> 
+        </a>
+
+        <a href="#miModal15">
+        <div class="section-hambur">
+            <div class="p1">
+                <div class="p2">
+             <p class="name-prod">San fermin</p> 
+             <p class="precio">$7.990</p>  
+             </div>
+             <img class="img-menus" src="multimedia/pizza6.png">
+           </div>
+        </div> 
+        </a>
+        
+        </div>
+
+        <a name="churra" class="titulos-categoria"><p>CHURRASCOS</p></a>
+        <div class="container-hambur">
+
+            <a href="#miModal16">
+            <div class="section-hambur">
+                <div class="p1">
+                    <div class="p2">
+                 <p class="name-prod">Churrasco Brasileño</p> 
+                 <p class="precio">$6.500</p>  
+                 </div>
+                 <img class="img-menus" src="multimedia/churrasco-muestra.png">
+               </div>
+            </div> 
+            </a>
+
+            <a href="#miModal17">
+            <div class="section-hambur">
+                <div class="p1">
+                    <div class="p2">
+                 <p class="name-prod">Churrasco Completo</p> 
+                 <p class="precio">$6.500</p>  
+                 </div>
+                 <img class="img-menus" src="multimedia/churrasco2.png">
+               </div>
+            </div> 
+            </a>
+
+            <a href="#miModal18">
+            <div class="section-hambur">
+                <div class="p1">
+                    <div class="p2">
+                 <p class="name-prod">Churrasco Luco</p> 
+                 <p class="precio">$5.990</p>  
+                 </div>
+                 <img class="img-menus" src="multimedia/churrasco3.png">
+               </div>
+            </div> 
+            </a>
+            
+            </div>
+            <div class="container-hambur">
+
+                <a href="#miModal19">
+                <div class="section-hambur">
+                    <div class="p1">
+                        <div class="p2">
+                     <p class="name-prod">Churrasco Italiano</p> 
+                     <p class="precio">$5.990</p>  
+                     </div>
+                     <img class="img-menus" src="multimedia/churrasco4.png">
+                   </div>
+                </div> 
+                </a>
+
+                <a href="#miModal20">
+                <div class="section-hambur">
+                    <div class="p1">
+                        <div class="p2">
+                     <p class="name-prod">Churrasco Chacarero</p> 
+                     <p class="precio">$5.990</p>  
+                     </div>
+                     <img class="img-menus" src="multimedia/chacarero.png">
+                   </div>
+                </div> 
+                </a>
+                <a href="#miModal21">
+                <div class="section-hambur">
+                    <div class="p1">
+                        <div class="p2">
+                     <p class="name-prod">Churrasco Chemilico</p> 
+                     <p class="precio">$5.990</p>  
+                     </div>
+                     <img class="img-menus" src="multimedia/chemilico.png">
+                   </div>
+                </div> 
+                </a>
+                
+                </div>
+
+<a name="veggie" class="titulos-categoria"><p>HAMBURGUESAS VEGANAS</p></a>
+<div class="container-hambur">
+
+    <a href="#miModal22">
+    <div class="section-hambur">
+        <div class="p1">
+            <div class="p2">
+         <p class="name-prod">Hamburguesa de lentejas</p> 
+         <p class="precio">$5.990</p>  
+         </div>
+         <img class="img-menus" src="multimedia/veggie1.png">
+       </div>
+    </div> 
+    </a>
+
+    <a href="#miModal23">
+    <div class="section-hambur">
+        <div class="p1">
+            <div class="p2">
+         <p class="name-prod">hamburguesa de garbanzos</p> 
+         <p class="precio">$5.990</p>  
+         </div>
+         <img class="img-menus" src="multimedia/veggie3.png">
+       </div>
+    </div> 
+    </a>
+
+    <a href="#miModal24">
+    <div class="section-hambur">
+        <div class="p1">
+            <div class="p2">
+         <p class="name-prod">hamburguesa poroto negro</p> 
+         <p class="precio">$5.990</p>  
+         </div>
+         <img class="img-menus" src="multimedia/veggie2.png">
+       </div>
+    </div> 
+    </a>
+    
+    </div>
+
+    <a name="tacos" class="titulos-categoria"><p>TACOS MEXICANOS</p></a>
+<div class="container-hambur">
+
+    <a href="#miModal25">
+
+    <div class="section-hambur">
+        <div class="p1">
+            <div class="p2">
+         <p class="name-prod">Madre Tierra</p> 
+         <p class="precio">$4.490</p>  
+         </div>
+         <img class="img-menus" src="multimedia/tacos1.jpg">
+       </div>
+    </div> 
+    </a>
+
+    <a href="#miModal26">
+    <div class="section-hambur">
+        <div class="p1">
+            <div class="p2">
+         <p class="name-prod">Chido</p> 
+         <p class="precio">$4.990</p>  
+         </div>
+         <img class="img-menus" src="multimedia/tacos2.jpg">
+       </div>
+    </div> 
+    </a>
+
+    <a href="#miModal27">
+    <div class="section-hambur">
+        <div class="p1">
+            <div class="p2">
+         <p class="name-prod">Mero Mero</p> 
+         <p class="precio">$4.990</p>  
+         </div>
+         <img class="img-menus" src="multimedia/tacos3.jpg">
+       </div>
+    </div> 
+    </a>
+    
+    </div>
+
+    <a name="chorri" class="titulos-categoria"><p>CHORRILLANAS</p></a>
+    <div class="container-hambur">
+    
+        <a href="#miModal28">
+        <div class="section-hambur">
+            <div class="p1">
+                <div class="p2">
+             <p class="name-prod">Chorrillana Carnívora</p> 
+             <p class="precio">$16.990</p>  
+             </div>
+             <img class="img-menus" src="multimedia/chorri1.png">
+           </div>
+        </div> 
+        </a>
+
+        <a href="#miModal29">
+        <div class="section-hambur">
+            <div class="p1">
+                <div class="p2">
+             <p class="name-prod">Chorrillana Clásica</p> 
+             <p class="precio">$16.490</p>  
+             </div>
+             <img class="img-menus" src="multimedia/chorri2.png">
+           </div>
+        </div> 
+        </a>
+
+        <a href="#miModal30">
+        <div class="section-hambur">
+            <div class="p1">
+                <div class="p2">
+             <p class="name-prod">Chorrillana Española</p> 
+             <p class="precio">$14.990</p>  
+             </div>
+             <img class="img-menus" src="multimedia/chorri3.png">
+           </div>
+        </div> 
+        </a>
+        
+        </div>
+        <a name="bebi" class="titulos-categoria"><p>BEBIDAS</p></a>
+<div class="container-hambur">
+
+    <a href="#miModal31">
+    <div class="section-hambur">
+        <div class="p1">
+            <div class="p2">
+         <p class="name-prod">Bebidas Variedades Individual</p> 
+         <p class="precio">$1.500</p>  
+         </div>
+         <img class="img-menus" src="multimedia/bebida.png">
+       </div>
+    </div> 
+    </a>
+
+    <a href="#miModal32">
+    <div class="section-hambur">
+        <div class="p1">
+            <div class="p2">
+         <p class="name-prod">Agua Mineral Variedades</p> 
+         <p class="precio">$1.500</p>  
+         </div>
+         <img class="img-menus" src="multimedia/aguamineral.png">
+       </div>
+    </div> 
+    </a>
+    <a href="#miModal33">
+    <div class="section-hambur">
+        <div class="p1">
+            <div class="p2">
+         <p class="name-prod">Jugos Naturales Variedades</p> 
+         <p class="precio">$2.990</p>  
+         </div>
+         <img class="img-menus" src="multimedia/jugo.png">
+       </div>
+    </div> 
+    </a>
+    
+    </div>
+    <a name="veggie" class="titulos-categoria"><p>CERVEZAS</p></a>
+<div class="container-hambur">
+
+    <a href="#miModal34">
+    <div class="section-hambur">
+        <div class="p1">
+            <div class="p2">
+         <p class="name-prod">Shop Austral 1.5 litro</p> 
+         <p class="precio">$4.990</p>  
+         </div>
+         <img class="img-menus" src="multimedia/cerv1.jpg">
+       </div>
+    </div> 
+    </a>
+
+    <a href="#miModal35">
+    <div class="section-hambur">
+        <div class="p1">
+            <div class="p2">
+         <p class="name-prod">Cervezas Individuales Variedades</p> 
+         <p class="precio">$5.990</p>  
+         </div>
+         <img class="img-menus" src="multimedia/cerv2.jpg">
+       </div>
+    </div> 
+    </a>
+
+    <a href="#miModal36">
+    <div class="section-hambur">
+        <div class="p1">
+            <div class="p2">
+         <p class="name-prod">Shop Kunstmann 3 Litros</p> 
+         <p class="precio">$8.990</p>  
+         </div>
+         <img class="img-menus" src="multimedia/cerv3.jpg">
+       </div>
+    </div> 
+    </a>
+    
+    </div>
+                                    <!--modals-->
+
+      <!--hanmburguesas-->                              
+    <div id="miModal" class="modal-2">
+        <div class="modal-contenido">
+        
+          <img class="menu-modal" src="multimedia/chupisso.jpeg" alt="">
+          <div class="descrip">
+            <a class="cerrar-modal" href="#golosa">X</a>
+          <h2 class="title-modalm">La Golosa</h2>
+          <p>Hamburguesa de res casera, queso cheddar fundido, tocino ahumado, cebolla morada, pepinillos y pimientos asados</p>
+          <p>Todas las Hamburguesas incluyen papas fritas gratis</p>
+          <p>Elige hasta 3 de nuestras salsas</p>
+          <lu>
+            <li>Salsa Verde</li>
+            <li>Salsa Queso</li>
+            <li>Salsa Ajo</li>
+            <li>Salsa Aji</li>
+            <li>Mayonesa-Ketchup-Mostaza</li>
+          </lu>
+        </div>
+        </div>  
+      </div>
+
+      <div id="miModal2" class="modal-2">
+        <div class="modal-contenido">
+        
+          <img class="menu-modal" src="multimedia/clasica.jpeg" alt="">
+          <div class="descrip">
+            <a class="cerrar-modal" href="#clasica">X</a>
+          <h2 class="title-modalm">Clásica</h2>
+          <p>Hamburguesa de res casera, mayonesa casera, lechuga lolo green, palta, tomate</p>
+          <p>Todas las Hamburguesas incluyen papas fritas gratis</p>
+          <p>Elige hasta 3 de nuestras salsas</p>
+          <lu>
+            <li>Salsa Verde</li>
+            <li>Salsa Queso</li>
+            <li>Salsa Ajo</li>
+            <li>Salsa Aji</li>
+            <li>Mayonesa-Ketchup-Mostaza</li>
+          </lu>
+        </div>
+        </div>  
+      </div>
+
+
+      <div id="miModal3" class="modal-2">
+        <div class="modal-contenido">
+        
+          <img class="menu-modal" src="multimedia/champinon.jpeg" alt="">
+          <div class="descrip">
+            <a class="cerrar-modal" href="#champ">X</a>
+          <h2 class="title-modalm">La Champiñona</h2>
+          <p>Hamburguesa de res casera, rellena con queso cheddar, salsa pamplona, champiñones grillados, cebolla caramelizada</p>
+          <p>Todas las Hamburguesas incluyen papas fritas gratis</p>
+          <p>Elige hasta 3 de nuestras salsas</p>
+          <lu>
+            <li>Salsa Verde</li>
+            <li>Salsa Queso</li>
+            <li>Salsa Ajo</li>
+            <li>Salsa Aji</li>
+            <li>Mayonesa-Ketchup-Mostaza</li>
+          </lu>
+        </div>
+        </div>  
+      </div>
+
+      <div id="miModal4" class="modal-2">
+        <div class="modal-contenido">
+        <img class="menu-modal" src="multimedia/queso.png" alt="">
+          <div class="descrip">
+            <a class="cerrar-modal" href="#chesse">X</a>
+          <h2 class="title-modalm">Chesseburguer</h2>
+          <p>Hamburguesa de res casera, queso cheddar fundido</p>
+          <p>Todas las Hamburguesas incluyen papas fritas gratis</p>
+          <p>Elige hasta 3 de nuestras salsas</p>
+          <lu>
+            <li>Salsa Verde</li>
+            <li>Salsa Queso</li>
+            <li>Salsa Ajo</li>
+            <li>Salsa Aji</li>
+            <li>Mayonesa-Ketchup-Mostaza</li>
+          </lu>
+        </div>
+        </div>  
+      </div>
+
+
+
+      <div id="miModal5" class="modal-2">
+        <div class="modal-contenido">
+        
+          <img class="menu-modal" src="multimedia/camarona2.png" alt="">
+          <div class="descrip">
+            <a class="cerrar-modal" href="#camarona">X</a>
+          <h2 class="title-modalm">Camarona</h2>
+          <p>Hamburguesa de camarones, cebolla caramelizada, queso mantecoso, tocino y palta.</p>
+          <p>Todas las Hamburguesas incluyen papas fritas gratis</p>
+          <p>Elige hasta 3 de nuestras salsas</p>
+          <lu>
+            <li>Salsa Verde</li>
+            <li>Salsa Queso</li>
+            <li>Salsa Ajo</li>
+            <li>Salsa Aji</li>
+            <li>Mayonesa-Ketchup-Mostaza</li>
+          </lu>
+        </div>
+        </div>  
+      </div>
+      <div id="miModal6" class="modal-2">
+        <div class="modal-contenido">
+        
+          <img class="menu-modal" src="multimedia/mexicana.png" alt="">
+          <div class="descrip">
+            <a class="cerrar-modal" href="#mexicana">X</a>
+          <h2 class="title-modalm">La Mexicana</h2>
+          <p>Hamburguesa de res casera, queso mantecoso fundido, guacamole, jalapeño  y papas fritas</p>
+          <p>Todas las Hamburguesas incluyen papas fritas gratis</p>
+          <p>Elige hasta 3 de nuestras salsas</p>
+          <lu>
+            <li>Salsa Verde</li>
+            <li>Salsa Queso</li>
+            <li>Salsa Ajo</li>
+            <li>Salsa Aji</li>
+            <li>Mayonesa-Ketchup-Mostaza</li>
+          </lu>
+        </div>
+        </div>  
+      </div>
+
+      <div id="miModal7" class="modal-2">
+        <div class="modal-contenido">
+        
+          <img class="menu-modal" src="multimedia/hamburguesa-muestra2.png" alt="">
+          <div class="descrip">
+            <a class="cerrar-modal" href="#chilean">X</a>
+          <h2 class="title-modalm">Chilean Burguer</h2>
+          <p>Hamburguesa de res casera, doble burger, tocino ahumado, salsa alioli, tomate, pimientos rojos asados,lechuga lolo green,queso cheddar fundido y nuestra suprema de ave a la plancha</p>
+          <p>Todas las Hamburguesas incluyen papas fritas gratis</p>
+          <p>Elige hasta 3 de nuestras salsas</p>
+          <lu>
+            <li>Salsa Verde</li>
+            <li>Salsa Queso</li>
+            <li>Salsa Ajo</li>
+            <li>Salsa Aji</li>
+            <li>Mayonesa-Ketchup-Mostaza</li>
+          </lu>
+        </div>
+        </div>  
+      </div>
+      <div id="miModal8" class="modal-2">
+        <div class="modal-contenido">
+        
+          <img class="menu-modal" src="multimedia/cebollas.png" alt="">
+          <div class="descrip">
+            <a class="cerrar-modal" href="#onion">X</a>
+          <h2 class="title-modalm">Onion Burguer</h2>
+          <p>Hamburguesa de res casera, salsa barbecue, queso cheddar fundido, tocino ahumado, aros de cebolla</p>
+          <p>Todas las Hamburguesas incluyen papas fritas gratis</p>
+          <p>Elige hasta 3 de nuestras salsas</p>
+          <lu>
+            <li>Salsa Verde</li>
+            <li>Salsa Queso</li>
+            <li>Salsa Ajo</li>
+            <li>Salsa Aji</li>
+            <li>Mayonesa-Ketchup-Mostaza</li>
+          </lu>
+        </div>
+        </div>  
+      </div>
+
+      <div id="miModal9" class="modal-2">
+        <div class="modal-contenido">
+        
+          <img class="menu-modal" src="multimedia/marytierra.png" alt="">
+          <div class="descrip">
+            <a class="cerrar-modal" href="#marytierra">X</a>
+          <h2 class="title-modalm">Mar y Tierra</h2>
+          <p>Hamburguesa de res casera, queso cabra, camarones al pil pil y salsa alioli</p>
+          <p>Todas las Hamburguesas incluyen papas fritas gratis</p>
+          <p>Elige hasta 3 de nuestras salsas</p>
+          <lu>
+            <li>Salsa Verde</li>
+            <li>Salsa Queso</li>
+            <li>Salsa Ajo</li>
+            <li>Salsa Aji</li>
+            <li>Mayonesa-Ketchup-Mostaza</li>
+          </lu>
+        </div>
+        </div>  
+      </div>
+       <!--fin hanmburguesas-->    
+
+ <!--pizzas section-->
+      <div id="miModal10" class="modal-2">
+        <div class="modal-contenido">
+        
+          <img class="menu-modal" src="multimedia/pizza1.png" alt="">
+          <div class="descrip">
+            <a class="cerrar-modal" href="#onion">X</a>
+          <h2 class="title-modalm">Pizza 4 carnes</h2>
+          <p>Pepperoni / tocino ahumado / salchicha sureña / jamón acaramelado</p>
+          <p>Tu eliges Borde normal o borde delgado</p>
+          <p>Elige hasta 3 de nuestras salsas</p>
+          <lu>
+            <li>Salsa mantequilla de ajo</li>
+            <li>Salsa pesto de albahaca</li>
+            <li>Salsa jalapeño</li>
+            <li>Salsa pomodoro</li>
+            <li>Salsa mostaza miel</li>
+          </lu>
+        </div>
+        </div>  
+      </div>
+
+      <div id="miModal11" class="modal-2">
+        <div class="modal-contenido">
+         <img class="menu-modal" src="multimedia/pizza2.png" alt="">
+          <div class="descrip">
+            <a class="cerrar-modal" href="#onion">X</a>
+          <h2 class="title-modalm">Pizza Veggie</h2>
+          <p>Pimientos verdes / champiñón, cebolla morada / aceitunas negras</p>
+          <p>Tu eliges Borde normal o borde delgado</p>
+          <p>Elige hasta 3 de nuestras salsas</p>
+          <lu>
+            <li>Salsa mantequilla de ajo</li>
+            <li>Salsa pesto de albahaca</li>
+            <li>Salsa jalapeño</li>
+            <li>Salsa pomodoro</li>
+            <li>Salsa mostaza miel</li>
+          </lu>
+        </div>
+        </div>  
+      </div>
+
+
+      <div id="miModal12" class="modal-2">
+        <div class="modal-contenido">
+         <img class="menu-modal" src="multimedia/pizza3.png" alt="">
+          <div class="descrip">
+            <a class="cerrar-modal" href="#onion">X</a>
+          <h2 class="title-modalm">Pizza Napolitana</h2>
+          <p>Queso Mozarella/ Jamón / tomates frescos</p>
+          <p>Tu eliges Borde normal o borde delgado</p>
+          <p>Elige hasta 3 de nuestras salsas</p>
+          <lu>
+            <li>Salsa mantequilla de ajo</li>
+            <li>Salsa pesto de albahaca</li>
+            <li>Salsa jalapeño</li>
+            <li>Salsa pomodoro</li>
+            <li>Salsa mostaza miel</li>
+          </lu>
+        </div>
+        </div>  
+      </div>
+
+
+      <div id="miModal13" class="modal-2">
+        <div class="modal-contenido">
+         <img class="menu-modal" src="multimedia/pizza4.png" alt="">
+          <div class="descrip">
+            <a class="cerrar-modal" href="#onion">X</a>
+          <h2 class="title-modalm">Pizza Duo</h2>
+          <p>Queso mozzarella / jamón acaramelado</p>
+          <p>Tu eliges Borde normal o borde delgado</p>
+          <p>Elige hasta 3 de nuestras salsas</p>
+          <lu>
+            <li>Salsa mantequilla de ajo</li>
+            <li>Salsa pesto de albahaca</li>
+            <li>Salsa jalapeño</li>
+            <li>Salsa pomodoro</li>
+            <li>Salsa mostaza miel</li>
+          </lu>
+        </div>
+        </div>  
+      </div>
+
+
+      <div id="miModal14" class="modal-2">
+        <div class="modal-contenido">
+         <img class="menu-modal" src="multimedia/pizza5.png" alt="">
+          <div class="descrip">
+            <a class="cerrar-modal" href="#onion">X</a>
+          <h2 class="title-modalm">Pizza  Pepperoni</h2>
+          <p>Mozarella / Pepperoni ahumado</p>
+          <p>Tu eliges Borde normal o borde delgado</p>
+          <p>Elige hasta 3 de nuestras salsas</p>
+          <lu>
+            <li>Salsa mantequilla de ajo</li>
+            <li>Salsa pesto de albahaca</li>
+            <li>Salsa jalapeño</li>
+            <li>Salsa pomodoro</li>
+            <li>Salsa mostaza miel</li>
+          </lu>
+        </div>
+        </div>  
+      </div>
+
+      <div id="miModal15" class="modal-2">
+        <div class="modal-contenido">
+         <img class="menu-modal" src="multimedia/pizza6.png" alt="">
+          <div class="descrip">
+            <a class="cerrar-modal" href="#onion">X</a>
+          <h2 class="title-modalm">Pizza San Fermin</h2>
+          <p>Pollo salteado / arrollado lomo / pimientos verdes / aceitunas.</p>
+          <p>Tu eliges Borde normal o borde delgado</p>
+          <p>Elige hasta 3 de nuestras salsas</p>
+          <lu>
+            <li>Salsa mantequilla de ajo</li>
+            <li>Salsa pesto de albahaca</li>
+            <li>Salsa jalapeño</li>
+            <li>Salsa pomodoro</li>
+            <li>Salsa mostaza miel</li>
+          </lu>
+        </div>
+        </div>  
+      </div>
+ <!--fin pizzas section-->
+
+      <!--churrascos section-->
+
+      <div id="miModal16" class="modal-2">
+        <div class="modal-contenido">
+         <img class="menu-modal" src="multimedia/churrasco-muestra.png" alt="">
+          <div class="descrip">
+            <a class="cerrar-modal" href="#onion">X</a>
+          <h2 class="title-modalm">Churrasco Brasileño</h2>
+          <p>Churrasco de posta negra laminada y sellada a la plancha. Mayonesa casera, queso mantecoso fundido, palta.</p>
+          <p>Todos los Churrascos incluyen papas fritas gratis</p>
+          <p>Elige hasta 3 de nuestras salsas</p>
+          <lu>
+            <li>Salsa Verde</li>
+            <li>Salsa Queso</li>
+            <li>Salsa Ajo</li>
+            <li>Salsa Aji</li>
+            <li>Mayonesa-Ketchup-Mostaza</li>
+          </lu>
+        </div>
+        </div>  
+      </div>
+
+      <div id="miModal17" class="modal-2">
+        <div class="modal-contenido">
+         <img class="menu-modal" src="multimedia/churrasco2.png" alt="">
+          <div class="descrip">
+            <a class="cerrar-modal" href="#onion">X</a>
+          <h2 class="title-modalm">Churrasco Completo</h2>
+          <p>Churrasco de posta negra laminada y sellada a la plancha. Mayonesa casera, palta, tomate, chucrut y americana.</p>
+          <p>Todos los Churrascos incluyen papas fritas gratis</p>
+          <p>Elige hasta 3 de nuestras salsas</p>
+          <lu>
+            <li>Salsa Verde</li>
+            <li>Salsa Queso</li>
+            <li>Salsa Ajo</li>
+            <li>Salsa Aji</li>
+            <li>Mayonesa-Ketchup-Mostaza</li>
+          </lu>
+        </div>
+        </div>  
+      </div>
+
+      <div id="miModal18" class="modal-2">
+        <div class="modal-contenido">
+         <img class="menu-modal" src="multimedia/churrasco3.png" alt="">
+          <div class="descrip">
+            <a class="cerrar-modal" href="#onion">X</a>
+          <h2 class="title-modalm">Churrasco Luco</h2>
+          <p>Churrasco de posta negra laminada y sellada a la plancha. Queso mantecoso fundido.</p>
+          <p>Todos los Churrascos incluyen papas fritas gratis</p>
+          <p>Elige hasta 3 de nuestras salsas</p>
+          <lu>
+            <li>Salsa Verde</li>
+            <li>Salsa Queso</li>
+            <li>Salsa Ajo</li>
+            <li>Salsa Aji</li>
+            <li>Mayonesa-Ketchup-Mostaza</li>
+          </lu>
+        </div>
+        </div>  
+      </div>
+
+      <div id="miModal19" class="modal-2">
+        <div class="modal-contenido">
+         <img class="menu-modal" src="multimedia/churrasco4.png" alt="">
+          <div class="descrip">
+            <a class="cerrar-modal" href="#onion">X</a>
+          <h2 class="title-modalm">Churrasco Italiano</h2>
+          <p>Churrasco de posta negra laminada y sellada a la plancha. Mayonesa casera, palta y tomate.</p>
+          <p>Todos los Churrascos incluyen papas fritas gratis</p>
+          <p>Elige hasta 3 de nuestras salsas</p>
+          <lu>
+            <li>Salsa Verde</li>
+            <li>Salsa Queso</li>
+            <li>Salsa Ajo</li>
+            <li>Salsa Aji</li>
+            <li>Mayonesa-Ketchup-Mostaza</li>
+          </lu>
+        </div>
+        </div>  
+      </div>
+
+
+      <div id="miModal20" class="modal-2">
+        <div class="modal-contenido">
+         <img class="menu-modal" src="multimedia/chacarero.png" alt="">
+          <div class="descrip">
+            <a class="cerrar-modal" href="#onion">X</a>
+          <h2 class="title-modalm">Churrasco Chacarero</h2>
+          <p>Churrasco de posta negra laminada y sellada a la plancha. Poroto verde, Ají Verde y Tomate.</p>
+          <p>Todos los Churrascos incluyen papas fritas gratis</p>
+          <p>Elige hasta 3 de nuestras salsas</p>
+          <lu>
+            <li>Salsa Verde</li>
+            <li>Salsa Queso</li>
+            <li>Salsa Ajo</li>
+            <li>Salsa Aji</li>
+            <li>Mayonesa-Ketchup-Mostaza</li>
+          </lu>
+        </div>
+        </div>  
+      </div>
+
+
+      <div id="miModal21" class="modal-2">
+        <div class="modal-contenido">
+         <img class="menu-modal" src="multimedia/chemilico.png" alt="">
+          <div class="descrip">
+            <a class="cerrar-modal" href="#onion">X</a>
+          <h2 class="title-modalm">Churrasco Chemilico</h2>
+          <p>Churrasco de posta negra laminada y sellada a la plancha acompañada de dos huevos fritos</p>
+          <p>Todos los Churrascos incluyen papas fritas gratis</p>
+          <p>Elige hasta 3 de nuestras salsas</p>
+          <lu>
+            <li>Salsa Verde</li>
+            <li>Salsa Queso</li>
+            <li>Salsa Ajo</li>
+            <li>Salsa Aji</li>
+            <li>Mayonesa-Ketchup-Mostaza</li>
+          </lu>
+        </div>
+        </div>  
+      </div>
+       <!--fin churrascos section-->
+
+<!--hambrgeusas veganas-->
+<div id="miModal22" class="modal-2">
+  <div class="modal-contenido">
+   <img class="menu-modal" src="multimedia/veggie1.png" alt="">
+    <div class="descrip">
+      <a class="cerrar-modal" href="#onion">X</a>
+    <h2 class="title-modalm">Hamburguesa de Lentejas</h2>
+    <p>Exquisita hamburguesa de lentejas preparada con la receta de la casa</p>
+    <p>Todas las hamburguesas Veggie incluyen papas fritas gratis</p>
+    <p>Elige hasta 3 de nuestras salsas</p>
+    <lu>
+      <li>Salsa Verde</li>
+      <li>Salsa Queso Vegana</li>
+      <li>Salsa Ajo</li>
+      <li>Salsa Aji</li>
+      <li>Mayonesa Vegana-Ketchup-Mostaza</li>
+    </lu>
+  </div>
+  </div>  
+</div>
+
+
+<div id="miModal23" class="modal-2">
+  <div class="modal-contenido">
+   <img class="menu-modal" src="multimedia/veggie3.png" alt="">
+    <div class="descrip">
+      <a class="cerrar-modal" href="#onion">X</a>
+    <h2 class="title-modalm">Hamburguesa de Garbanzos</h2>
+    <p>Exquisita hamburguesa de Garbanzos preparada con la receta de la casa</p>
+    <p>Todas las hamburguesas Veggie incluyen papas fritas gratis</p>
+    <p>Elige hasta 3 de nuestras salsas</p>
+    <lu>
+      <li>Salsa Verde</li>
+      <li>Salsa Queso Vegana</li>
+      <li>Salsa Ajo</li>
+      <li>Salsa Aji</li>
+      <li>Mayonesa Vegana-Ketchup-Mostaza</li>
+    </lu>
+  </div>
+  </div>  
+</div>
+
+<div id="miModal24" class="modal-2">
+  <div class="modal-contenido">
+   <img class="menu-modal" src="multimedia/veggie2.png" alt="">
+    <div class="descrip">
+      <a class="cerrar-modal" href="#onion">X</a>
+    <h2 class="title-modalm">Hamburguesa de Porotos Negros</h2>
+    <p>Exquisita hamburguesa de porotos negros preparada con la receta de la casa</p>
+    <p>Todas las hamburguesas Veggie incluyen papas fritas gratis</p>
+    <p>Elige hasta 3 de nuestras salsas</p>
+    <lu>
+      <li>Salsa Verde</li>
+      <li>Salsa Queso Vegana</li>
+      <li>Salsa Ajo</li>
+      <li>Salsa Aji</li>
+      <li>Mayonesa Vegana-Ketchup-Mostaza</li>
+    </lu>
+  </div>
+  </div>  
+</div>
+<!--fin hambrgeusas veganas-->
+
+
+<!--tacos mexicanos-->
+<div id="miModal25" class="modal-2">
+  <div class="modal-contenido">
+   <img class="menu-modal" src="multimedia/tacos1.jpg" alt="">
+    <div class="descrip">
+      <a class="cerrar-modal" href="#onion">X</a>
+    <h2 class="title-modalm">Tacos Madre Tierra</h2>
+    <p>Carne a las olla deshebrada, acompañada de cebolla y pimientos asados.</p>
+    <p>Elige hasta 3 de nuestros agregados</p>
+    <lu>
+      <li>Salsa Jalapeño Palta</li>
+      <li>Salsa Guajillo</li>
+      <li>Salsa Chipotle</li>
+      <li>Salsa Aji</li>
+      <li>Guacamole</li>
+    </lu>
+  </div>
+  </div>  
+</div>
+
+
+<div id="miModal26" class="modal-2">
+  <div class="modal-contenido">
+   <img class="menu-modal" src="multimedia/tacos2.jpg" alt="">
+    <div class="descrip">
+      <a class="cerrar-modal" href="#onion">X</a>
+    <h2 class="title-modalm">Tacos Chido</h2>
+    <p>Camarón ecuatoriano, pollo salteado, cebolla dorada, queso cremoso y palta.</p>
+    <p>Elige hasta 3 de nuestros agregados</p>
+    <lu>
+      <li>Salsa Jalapeño Palta</li>
+      <li>Salsa Guajillo</li>
+      <li>Salsa Chipotle</li>
+      <li>Salsa Aji</li>
+      <li>Guacamole</li>
+    </lu>
+  </div>
+  </div>  
+</div>
+
+<div id="miModal27" class="modal-2">
+  <div class="modal-contenido">
+   <img class="menu-modal" src="multimedia/tacos3.jpg" alt="">
+    <div class="descrip">
+      <a class="cerrar-modal" href="#onion">X</a>
+    <h2 class="title-modalm">Tacos Mero Mero</h2>
+    <p>Cerdo marinado en achiote y naranja, acompañado de frijoles negros más pimentón salteado.</p>
+    <p>Elige hasta 3 de nuestros agregados</p>
+    <lu>
+      <li>Salsa Jalapeño Palta</li>
+      <li>Salsa Guajillo</li>
+      <li>Salsa Chipotle</li>
+      <li>Salsa Aji</li>
+      <li>Guacamole</li>
+    </lu>
+  </div>
+  </div>  
+</div>
+<!--fin tacos mexicanos-->
+
+
+<!--chorrillanas-->
+<div id="miModal28" class="modal-2">
+  <div class="modal-contenido">
+   <img class="menu-modal" src="multimedia/chorri1.png" alt="">
+    <div class="descrip">
+      <a class="cerrar-modal" href="#onion">X</a>
+    <h2 class="title-modalm">Chorrillana Carnívora</h2>
+    <p>Papas fritas con 3 tipos de carne: trozos de carne de vacuno a la plancha, cortes de carne de cerdo y de pollo, todo acompañado de cebolla caramelizada, pimentón y cebollín salteados, chorizos, huevos y trocitos te tocino.</p>
+    <p>Elige hasta 3 de nuestros agregados</p>
+    <lu>
+      <li>Salsa Verde</li>
+      <li>Salsa Queso</li>
+      <li>Salsa Ajo</li>
+      <li>Salsa Aji</li>
+      <li>Mayonesa-Ketchup-Mostaza</li>
+    </lu>
+  </div>
+  </div>  
+</div>
+
+<div id="miModal29" class="modal-2">
+  <div class="modal-contenido">
+   <img class="menu-modal" src="multimedia/chorri2.png" alt="">
+    <div class="descrip">
+      <a class="cerrar-modal" href="#onion">X</a>
+    <h2 class="title-modalm">Chorrillana Clásica</h2>
+    <p>Papas fritas con cortes de carne plateada, chorizo, vienesas, huevos, pimentón y cebollín salteados y cebolla caramelizada.</p>
+    <p>Elige hasta 3 de nuestros agregados</p>
+    <lu>
+      <li>Salsa Verde</li>
+      <li>Salsa Queso</li>
+      <li>Salsa Ajo</li>
+      <li>Salsa Aji</li>
+      <li>Mayonesa-Ketchup-Mostaza</li>
+    </lu>
+  </div>
+  </div>  
+</div>
+
+<div id="miModal30" class="modal-2">
+  <div class="modal-contenido">
+   <img class="menu-modal" src="multimedia/chorri3.png" alt="">
+    <div class="descrip">
+      <a class="cerrar-modal" href="#onion">X</a>
+    <h2 class="title-modalm">Chorrillana Española</h2>
+    <p>Papas fritas acompañadas con cebolla caramelizada, pimentón y cebollín salteados, trozos de carne de cerdo, chorizo, aceitunas y huevos.</p>
+    <p>Elige hasta 3 de nuestros agregados</p>
+    <lu>
+      <li>Salsa Verde</li>
+      <li>Salsa Queso</li>
+      <li>Salsa Ajo</li>
+      <li>Salsa Aji</li>
+      <li>Mayonesa-Ketchup-Mostaza</li>
+    </lu>
+  </div>
+  </div>  
+</div>
+<!--fin chorrillanas-->
+
+
+
+<!--inicio bebestibles-->
+<div id="miModal31" class="modal-2">
+  <div class="modal-contenido">
+   <img class="menu-modal" src="multimedia/latas.jpg" alt="">
+    <div class="descrip">
+      <a class="cerrar-modal" href="#onion">X</a>
+    <h2 class="title-modalm">Bebidas Variedades Individuales</h2>
+    <p>Bebida 330 cc Individual, en lata</p>
+    <p>Elige entre</p>
+    <lu>
+      <li>Coca Cola</li>
+      <li>Pepsi</li>
+      <li>Bilz / Pap</li>
+      <li>Fanta</li>
+      <li>Sprite</li>
+    </lu>
+  </div>
+  </div>  
+</div>
+
+
+<div id="miModal32" class="modal-2">
+  <div class="modal-contenido">
+   <img class="menu-modal" src="multimedia/aguas2.jpg" alt="">
+    <div class="descrip">
+      <a class="cerrar-modal" href="#onion">X</a>
+    <h2 class="title-modalm">Agua Mineral 600cc</h2>
+    <p>Agua Mineral Variedades </p>
+    <p>Elige entre</p>
+    <lu>
+      <li>Cachantun</li>
+      <li>Vital</li>
+      <li>Benedictino</li>
+      <li>Con gas</li>
+      <li>Sin gas</li>
+    </lu>
+  </div>
+  </div>  
+</div>
+
+<div id="miModal33" class="modal-2">
+  <div class="modal-contenido">
+   <img class="menu-modal" src="multimedia/jugos2.jpg" alt="">
+    <div class="descrip">
+      <a class="cerrar-modal" href="#onion">X</a>
+    <h2 class="title-modalm">Jugos Naturales 500cc</h2>
+    <p>Jugos Naturales 500 cc </p>
+    <p>Elige entre</p>
+    <lu>
+      <li>Mix Berries</li>
+      <li>Frutilla</li>
+      <li>Piña</li>
+      <li>Melon Tuna</li>
+      <li>Durazno</li>
+    </lu>
+  </div>
+  </div>  
+</div>
+
+<div id="miModal34" class="modal-2">
+  <div class="modal-contenido">
+   <img class="menu-modal" src="multimedia/cerv1.jpg" alt="">
+    <div class="descrip">
+      <a class="cerrar-modal" href="#onion">X</a>
+    <h2 class="title-modalm">Shop Austral 1.5 litro</h2>
+    <p>Cerveza de Barril</p>
+ 
+    <lu>
+      <li>Austral</li>
+     
+    </lu>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+  </div>  
+</div>
+
+<div id="miModal35" class="modal-2">
+  <div class="modal-contenido">
+   <img class="menu-modal" src="multimedia/cerv2.jpg" alt="">
+    <div class="descrip">
+      <a class="cerrar-modal" href="#onion">X</a>
+    <h2 class="title-modalm">Cerveza Individual Variedades</h2>
+    <p>Cerveza de botella 1.5 Lt</p>
+    <p>Elige entre:</p>
+    <lu>
+      <li>Volcanes</li>
+      <li>Goose Island</li>
+      <li>Del Puerto</li>
+      <li>Quimera</li>
+     
+    </lu>
+  </div>
+  </div>  
+</div>
+
+<div id="miModal36" class="modal-2">
+  <div class="modal-contenido">
+   <img class="menu-modal" src="multimedia/cerv3.jpg" alt="">
+    <div class="descrip">
+      <a class="cerrar-modal" href="#onion">X</a>
+    <h2 class="title-modalm">Shop Kunstmann 3 Litros</h2>
+    <p>Cerveza de Barril 3 lt</p>
+    <p>Elige entre:</p>
+    <lu>
+      <li>Torobayo</li>
+      <li>Pale Ale</li>
+      <li>Miel</li>
+      <li>Bock</li>
+     
+    </lu>
+  </div>
+  </div>  
+</div>
+<!--fin bebestibles-->
+
+
+
+
+ <!--fin modals-->     
+
+ <!--modal carro de compra-->
+<div id="miModalcar" class="modal-2">
+  <div class="modal-contenido-car">
+
+
+    
+    <div class="descrip">
+      <a class="cerrar-modal" href="#onion">X</a>
+      <img class="menu-modal-img" src="multimedia/prueba-logo.png" alt="">
+    <h2 class="title-modalm">Próximamente</h2>
+    <p>GRAN LANZAMIENTO</p>
+    <p>TIENDA ONLINE</p>
+    <p>Paga con webpay y recibe directamente en la puerta de tu casa</p>
+    <img class="menu-modal-img-3" src="multimedia/webpay3.png" alt="">
+  </div>
+  </div>  
+</div>
+<!--modal carro de compra-->
+
+<!--inicio footer-->
+
+<footer>
+  <div class="container_footer">
+   <div class="box__footer">
+       <div class="logo">
+           <img src="multimedia/logo.png" alt="">
+               </div>
+               <div class="terms">
+                  Somos una pyme familiar dedicada al rubro de la venta de comida rápida gourmet donde buscamos entregarles a nuestros clientes una experiencia en sabores inigualable.
+               </div>
+   </div>
+  
+   <div class="box__footer">
+  <h2>Encuentranos en</h2>
+  <a class="delivery-link" href="#"><img class="delivery" src="multimedia/rappi-logo.png"></a>
+  <a class="delivery-link" href="#"><img class="delivery" src="multimedia/pedidosya.png"></a>
+  <a class="delivery-link" href="#"><img class="delivery" src="multimedia/uber.png"></a>
+   </div>
+  
+   <div class="box__footer">
+      <h2>Contactanos</h2>
+      <a href="https://www.google.com/maps/place/Las+Urbinas+53,+Providencia,+Regi%C3%B3n+Metropolitana/@-33.4221174,-70.6140793,17z/data=!3m1!4b1!4m5!3m4!1s0x9662cf666838327f:0x8c87dd4bbc19a485!8m2!3d-33.4221174!4d-70.6118906" target="_blank">las Urbinas 53, Providencia, RM</a>
+      <a href="mailto:rodrigocc60@email.com">rodrigocc60@gmail.com</a>
+      <a href="https://api.whatsapp.com/send/?phone=56988792181&text&app_absent=0">+56988792181</a>
+      <a href="contacto.html" target="_blank">Contacto</a>
+       </div>
+  
+  
+       <div class="box__footer">
+          <h2>Redes Sociales</h2>
+          <a href="https://facebook.com/"><i class="fab fa-facebook-square"></i> Facebook</a>
+          <a href="https://twitter.com/"><i class="fab fa-twitter-square"></i> Twitter</a>
+          <a href="https://www.instagram.com/"><i class="fab fa-instagram-square"></i> Instagram</a>
+       </div>
+  
+  </div>
+  
+  <div class="box__copyright">
+      <hr>
+      <p>Todos los derechos reservados © 2021 <b>The Chilean Burguer</b></p>
+  </div>
+  
+  
+  </footer>
+  <!--fin footer-->
+<!--boton flotante-->
+    <a href="https://api.whatsapp.com/send?phone=56988792181" class="btn-wsp" target="_blank">
+        <i class="fa fa-whatsapp icono"></i>
+        </a>
+        <!--boton flotante-->
+
+        <!--JS-->
+    <script src="javascript/funciones.js"></script>
+    <!--JS-->
+</body>
+</html>

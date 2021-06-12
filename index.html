@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Chilean Burger</title>
+    <link rel="stylesheet" href="css/estilos.css">                                                 <!--ESTILOS generales-->
+    <link rel="stylesheet" href="css/movil.css" media="(min-width: 100px) and (max-width:500px)">  <!--ESTILOS css movil-->
+    <link rel="stylesheet" href="css/tablet.css" media="(min-width: 501px) and (max-width:999px)"> <!--ESTILOS css tablet-->
+    <link rel="icon" type="image/png" sizes="16x16" href="multimedia/favicon-32x32.png">           <!-- icono favicon -->
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>      <!-- iconos wsp y RR.SS-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>                    <!--ESTILOS Alerts con estilos-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet"> <!--tipo de fuente-->
+  
+  </head>
+
+<body>
+<header>
+    <!--menu principal-->
+    <nav class="contenedor">
+
+  <div class="logo">
+      <img src="multimedia/12105995_896986323725900_2681271618348409823_n.png" alt="">
+  </div>
+  <div class="enlaces">
+    <a href="#">INICIO</a>
+    <a href="menu.html">MENÚ</a>
+    <a href="sucursales.html">SUCURSALES</a>
+    <a href="nosotros.html">QUIENES SOMOS</a>
+    <a href="contacto.html">CONTACTO</a>
+    <a class="cta" href="#">ENTRAR <img class="user-icon" src="multimedia/user-pin-regular-48.png"></a>
+    <a class="cta" href="#miModalcar"><img class="carro-icon" src="multimedia/cart-regular-48.png"></a>
+   </div> 
+
+ <div class="hamburguesa">
+ <img src="multimedia/menu-alt-right-regular-48.png" alt="" id="hamburguesa">
+  </div>
+
+    </nav>
+    <!-- fin menu principal-->
+</header>
+
+
+<!--MODAL login-->
+<div class="modal-container" id="modal-container">
+     <form action="#" method="post">
+    <div class="modal modal-close" id="modal">
+    <p class="close">X</p>
+    <img class="img-login" src="multimedia/prueba-logo.png" alt="">
+
+    <h2>Iniciar sesión</h2>
+    <h6>¿Eres nuevo en este sitio?<a href="#miModalNewRegistro" class="close3"> Regístrate</a></h6>
+     
+    <label class="label-log">Email</label>
+    <input class="input-text" type="email" placeholder="Ingrese su email" required name="user" id="user-log">
+    <p id="msguser" class="alerta"></p>
+    <label class="label-log">Contraseña</label>
+    <input class="input-text" type="password" placeholder="Ingrese su Contraseña" required name="pass" id="pass-log">
+    <p id="msgpass" class="alerta"></p>
+    <input class="btn-login" type="button" name="button" value="Ingresar" onclick="ValidarLogin()" id="btn-log">
+    <a href="#miModalPass" class="close2">¿Olvidó su contraseña?</a>
+  
+    </div>
+</form>
+</div>
+<!--FIN login-->
+
+<!--client width-->
+<label class="slider-contenedora"></label>
+  <label class="slider-test"></label>
+<!--client width-->
+
+
+<!--inicio del carrusel-->
+<div class="container-all">
+
+    <input type="radio" id="1" name="image-slide" hidden/>
+    <input type="radio" id="2" name="image-slide" hidden/>
+    <input type="radio" id="3" name="image-slide" hidden/>
+    <input type="radio" id="4" name="image-slide" hidden/>
+
+    <div class="slide">
+
+        <div class="item-slide">
+            <img src="multimedia/img2.jpg">
+            <div class="txt-1-img">
+                <img src="multimedia/prueba-logo.png">
+               <!-- <p>THE CHILEAN BURGER</p>
+                <p>Just The Best</p>-->
+               </div>
+        </div>
+
+        <div class="item-slide">
+            <img src="multimedia/img1.jpg">
+            <div class="img-flot">
+               <img src="multimedia/pngtree-free-home-delivery-png-image_6260992.png">
+               </div>
+               <div class="txt-2">
+                <p>The Chilean Burger</p>
+                 <p>Delivery</p>
+                 <a href="https://api.whatsapp.com/send/?phone=56988792181&text&app_absent=0" target="_blank"><button class="wsp-banner">REALIZAR PEDIDO AL WSP</button></a>
+                 </div>
+               
+        </div>
+
+        <div class="item-slide">
+            <img src="multimedia/hamburguesa-2028707.jpg">
+        </div>
+
+        <div class="item-slide">
+            <img src="multimedia/hamburguesas-caseras.jpg">
+        </div>
+
+    </div>
+
+    <div class="pagination">
+       
+        <label class="pagination-item" for="1">
+            <img src="multimedia/img1.jpg">
+        </label>
+        
+        <label class="pagination-item" for="2">
+            <img src="multimedia/img2.jpg">
+        </label>
+        
+        <label class="pagination-item" for="3">
+            <img src="multimedia/img3.jpg">
+        </label>
+
+        <label class="pagination-item" for="4">
+            <img src="multimedia/img3.jpg">
+        </label>
+        
+    </div>
+    
+</div>
+<!--fin del carrusel-->
+
+<!--div antojo-->
+<div class="antojo-div">
+    <p>¿Qué se te antoja hoy?</p>
+</div>
+<!--div antojo-->
+
+
+
+<!--inicio productos-->
+<div class="productos-1">
+    <div class="serv1">
+    <a href="menu.html#hambur"><img class="serv-fotos" src="multimedia/hamburguesa-muestra.png"></a>
+    <div class="txt">
+    <p>Hamburgesas</p>
+   </div>
+    </div>
+
+    <div class="serv1">
+        <a href="menu.html#pizzas"><img class="serv-fotos" src="multimedia/pizza-muestra.png"></a>
+    <div class="txt">
+        <p>PIZZAS</p>
+       </div>
+        </div>
+
+    <div class="serv1">
+        <a href="menu.html#churra">  <img class="serv-fotos" src="multimedia/churrasco-muestra - copia.png"></a>
+    <div class="txt">
+    <p>CHURRASCOS</p>
+    </div>
+    </div>
+</div>
+
+<div class="productos-1">
+    <div class="serv1">
+    <a href="menu.html#veggie"><img class="serv-fotos" src="multimedia/veganas-muestra.png"></a>
+    <div class="txt">
+        <p>HAMBURGESAS VEGANAS</p>
+       </div>
+        </div>
+
+    <div class="serv1">
+        <a href="menu.html#chorri"><img class="serv-fotos" src="multimedia/chorrillanas-muestra.png"></a>
+    <div class="txt">
+        <p>CHORRILLANAS</p>
+       </div>
+        </div>
+
+    <div class="serv1">
+        <a href="menu.html#tacos"><img class="serv-fotos" src="multimedia/tacos-muestra.jpg"></a>
+    <div class="txt">
+        <p>TACOS MEXICANOS</p>
+       </div>
+        </div>
+
+
+</div>
+<!--fin productos-->
+
+<div class="antojo-div">
+    <p>¡Prueba nuestras especialidades!</p>
+</div>
+
+<!--Inicio Especialidades-->
+<div class="especialidades">
+<div class="prod-especialidades">
+<img  src="multimedia/champinon.jpeg">
+<p>la Champiñona</p>
+<p>Hamburguesa de res casera, rellena con queso cheddar, salsa casera, champiñones grillados, cebolla caramelizada</p>
+<br>
+<p>$5.990</p>
+<hr>
+<p>Ver Producto</p>
+<a href="#miModal">
+<img class="img-eye" src="multimedia/show-regular-24.png">
+</a>
+</div>
+
+
+<div id="miModal" class="modal-2">
+    <div class="modal-contenido">
+    
+      <img class="menu-modal" src="multimedia/champinon.jpeg" alt="">
+      <div class="descrip">
+        <a class="cerrar-modal" href="#champ">X</a>
+      <h2 class="title-modalm">La Champiñona</h2>
+      <p>Hamburguesa de res casera, rellena con queso cheddar, salsa pamplona, champiñones grillados, cebolla caramelizada</p>
+      <p>Todas las Hamburguesas incluyen papas fritas gratis</p>
+      <p>Elige hasta 3 de nuestras salsas</p>
+      <lu>
+        <li>Salsa Verde</li>
+        <li>Salsa Queso</li>
+        <li>Salsa Ajo</li>
+        <li>Salsa Aji</li>
+        <li>Mayonesa-Ketchup-Mostaza</li>
+      </lu>
+    </div>
+    </div>  
+  </div>
+
+<div class="prod-especialidades">
+<img src="multimedia/chupisso.jpeg">
+<p>La Golosa</p>
+<p>Hamburguesa de res casera, queso cheddar fundido, tocino ahumado, cebolla morada, pepinillos y pimientos asados</p>
+<br>
+<p>$5.990</p>
+<hr>
+<p>Ver Producto</p>
+<a href="#miModal2">
+<img src="multimedia/show-regular-24.png"></a>
+</div>
+
+<div id="miModal2" class="modal-2">
+    <div class="modal-contenido">
+    
+      <img class="menu-modal" src="multimedia/chupisso.jpeg" alt="">
+      <div class="descrip">
+        <a class="cerrar-modal" href="#golosa">X</a>
+      <h2 class="title-modalm">La Golosa</h2>
+      <p>Hamburguesa de res casera, queso cheddar fundido, tocino ahumado, cebolla morada, pepinillos y pimientos asados</p>
+      <p>Todas las Hamburguesas incluyen papas fritas gratis</p>
+      <p>Elige hasta 3 de nuestras salsas</p>
+      <lu>
+        <li>Salsa Verde</li>
+        <li>Salsa Queso</li>
+        <li>Salsa Ajo</li>
+        <li>Salsa Aji</li>
+        <li>Mayonesa-Ketchup-Mostaza</li>
+      </lu>
+    </div>
+    </div>  
+  </div>
+
+<div class="prod-especialidades">
+<img src="multimedia/clasica.jpeg">
+<p>La Clásica</p>
+<p>Hamburguesa de res casera, mayonesa casera, lechuga lolo green, palta, tomates organicos frescos</p>
+<br>
+<p>$5.990</p>
+<hr>
+<p>Ver Producto</p>
+<a href="#miModal3">
+<img src="multimedia/show-regular-24.png"></a>
+</div>
+
+
+<div id="miModal3" class="modal-2">
+    <div class="modal-contenido">
+    
+      <img class="menu-modal" src="multimedia/clasica.jpeg" alt="">
+      <div class="descrip">
+        <a class="cerrar-modal" href="#clasica">X</a>
+      <h2 class="title-modalm">Clásica</h2>
+      <p>Hamburguesa de res casera, mayonesa casera, lechuga lolo green, palta, tomate</p>
+      <p>Todas las Hamburguesas incluyen papas fritas gratis</p>
+      <p>Elige hasta 3 de nuestras salsas</p>
+      <lu>
+        <li>Salsa Verde</li>
+        <li>Salsa Queso</li>
+        <li>Salsa Ajo</li>
+        <li>Salsa Aji</li>
+        <li>Mayonesa-Ketchup-Mostaza</li>
+      </lu>
+    </div>
+    </div>  
+  </div>
+
+
+<div class="prod-especialidades">
+<img src="multimedia/queso.png">
+<p>ChesseBurger</p>
+<p>Hamburguesa de res casera, queso cheddar fundido, pepeinillos dill, salsa casera y cebolla morada </p>
+<br>
+<p>$4.990</p>
+<hr>
+<p>Ver Producto</p>
+<a href="#miModal4">
+<img src="multimedia/show-regular-24.png"></a>
+</div>
+
+<div id="miModal4" class="modal-2">
+    <div class="modal-contenido">
+    <img class="menu-modal" src="multimedia/queso.png" alt="">
+      <div class="descrip">
+        <a class="cerrar-modal" href="#chesse">X</a>
+      <h2 class="title-modalm">Chesseburguer</h2>
+      <p>Hamburguesa de res casera, queso cheddar fundido</p>
+      <p>Todas las Hamburguesas incluyen papas fritas gratis</p>
+      <p>Elige hasta 3 de nuestras salsas</p>
+      <lu>
+        <li>Salsa Verde</li>
+        <li>Salsa Queso</li>
+        <li>Salsa Ajo</li>
+        <li>Salsa Aji</li>
+        <li>Mayonesa-Ketchup-Mostaza</li>
+      </lu>
+    </div>
+    </div>  
+  </div>
+
+<div class="prod-especialidades">
+<img src="multimedia/cebollas.png">
+<p>Onion Burguer</p>
+<p>Hamburguesa de res casera, salsa barbecue, queso cheddar fundido, tocino ahumado, aros de cebolla</p>
+<br>
+<p>$5.990</p>
+<hr>
+<p>Ver Producto</p>
+<a href="#miModal5">
+<img src="multimedia/show-regular-24.png"></a>
+</div>
+
+
+<div id="miModal5" class="modal-2">
+    <div class="modal-contenido">
+
+
+      <img class="menu-modal" src="multimedia/cebollas.png" alt="">
+      <div class="descrip">
+        <a class="cerrar-modal" href="#onion">X</a>
+      <h2 class="title-modalm">Onion Burguer</h2>
+      <p>Hamburguesa de res casera, salsa barbecue, queso cheddar fundido, tocino ahumado, aros de cebolla</p>
+      <p>Todas las Hamburguesas incluyen papas fritas gratis</p>
+      <p>Elige hasta 3 de nuestras salsas</p>
+      <lu>
+        <li>Salsa Verde</li>
+        <li>Salsa Queso</li>
+        <li>Salsa Ajo</li>
+        <li>Salsa Aji</li>
+        <li>Mayonesa-Ketchup-Mostaza</li>
+      </lu>
+    </div>
+    </div>  
+  </div>
+
+</div>
+<!--Fin Especialidades-->
+
+
+
+
+<!--modal carro de compra-->
+<div id="miModalcar" class="modal-2">
+  <div class="modal-contenido-car">
+
+
+    
+    <div class="descrip">
+      <a class="cerrar-modal" href="#onion">X</a>
+      <img class="menu-modal-img" src="multimedia/prueba-logo.png" alt="">
+    <h2 class="title-modalm">Próximamente</h2>
+    <p>GRAN LANZAMIENTO</p>
+    <p>TIENDA ONLINE</p>
+    <p>Paga con webpay y recibe directamente en la puerta de tu casa</p>
+    <img class="menu-modal-img-3" src="multimedia/webpay3.png" alt="">
+  </div>
+  </div>  
+</div>
+<!--modal carro de compra-->
+
+
+<!--modal recuperar contraseña-->
+<div id="miModalPass" class="modal-2">
+  <div class="modal-contenido-car2" id="modal-contenido-car2">
+   <form action="#" method="post">
+    <div class="descrip">
+      <a class="cerrar-modal-pass" href="#">X</a>
+      <img class="menu-modal-img" src="multimedia/prueba-logo.png" alt="">
+    <h2 class="title-modalm">Recuperar contraseña</h2>
+    <p>Email:</p>
+    <div class="boton-restore">
+    <input class="email-reset" type="email" placeholder="Ingrese email" id="email-pass">
+    </div>
+    <p>A continuación, procederá a resetear su contraseña.
+      Recuerde que para recuperar la contraseña , su correo debe haber sido creado o actualizado.</p>
+      <div class="boton-restore">
+    <input class="button-reset" type="button" value="Recuperar Contraseña" onclick="Recuperar_pass()" id="btn-restore-pass">
+    <p id="msgrecuperar" class="alerta"></p>
+    </div>
+  </div>
+</form>
+  </div>  
+</div>
+<!--modal recuperar contraseña-->
+
+
+<!--modal nuevo registro-->
+<div id="miModalNewRegistro" class="modal-2">
+  <div class="modal-contenido-car3" id="modal-contenido-New">
+   <form action="#" method="post">
+    <div class="descrip-reg">
+      <a class="cerrar-modal-pass" href="#">X</a>
+      <img class="menu-modal-img-new" src="multimedia/prueba-logo.png" alt="">
+    <h2 class="title-modalm-new">NUEVOS CLIENTES</h2>
+    <p>Email: <input type="email" required name="nombrecompleto" maxlength="30" class="input-registro" id="email-new"></p>
+    <p id="msgnew" class="alerta-new"></p>
+    <p>Contraseña: <input type="password" maxlength="20" required name="nombrecompleto" class="input-registro" id="pass-1"></p>
+    <p id="msgnewp1" class="alerta-new"></p>
+    <p>Confirmar Contraseña: <input type="password" maxlength="20" required name="nombrecompleto" class="input-registro" id="pass-2"></p>
+    <p id="msgnewp2" class="alerta-new"></p>
+    <p>Nombre: <input type="text" name="nombrecompleto" maxlength="30" required class="input-registro" id="nombrenew"></p>
+    <p id="msgnewname" class="alerta-new"></p>
+    <p>Apellido: <input type="text" name="nombrecompleto" maxlength="30" required class="input-registro" id="apellidonew"></p>
+    <p id="msgnewape" class="alerta-new"></p>
+    <p>Rut: <input type="text" name="nombrecompleto" maxlength="10" required class="input-registro" id="rutnew"></p>
+    <p id="msgnewrut" class="alerta-new"></p>
+
+   <p >Sexo*<select class="option-sex" id="sexoption">
+     <option>Femenino</option>
+     <option>Masculino</option>
+   </select></p>
+   <input type="checkbox" name="news" id="checknews"><label class="check-sex" > Deseo recibir ofertas por e-mail </label>
+      <div class="boton-restore">
+    <input class="button-new-reg" type="button" value="Crear Cuenta" onclick="CrearCuenta()" id="btn-new-registro">
+    
+    </div>
+  </div>
+</form>
+  </div>  
+</div>
+<!--modal recuperar contraseña-->
+
+
+
+
+
+<!--inicio video-->
+<video class="video" src="multimedia/video.mp4" autoplay loop muted></video>
+<!--fin video-->
+
+
+<!--inicio footer-->
+<footer>
+<div class="container_footer">
+ <div class="box__footer">
+     <div class="logo">
+         <img src="multimedia/logo.png" alt="">
+             </div>
+             <div class="terms">
+                Somos una pyme familiar dedicada al rubro de la venta de comida rápida gourmet donde buscamos entregarles a nuestros clientes una experiencia en sabores inigualable.
+             </div>
+ </div>
+
+ <div class="box__footer">
+<h2>Encuentranos en</h2>
+<a class="delivery-link" href="#"><img class="delivery" src="multimedia/rappi-logo.png"></a>
+<a class="delivery-link" href="#"><img class="delivery" src="multimedia/pedidosya.png"></a>
+<a class="delivery-link" href="#"><img class="delivery" src="multimedia/uber.png"></a>
+ </div>
+
+ <div class="box__footer">
+    <h2>Contactanos</h2>
+    <a href="https://www.google.com/maps/place/Las+Urbinas+53,+Providencia,+Regi%C3%B3n+Metropolitana/@-33.4221174,-70.6140793,17z/data=!3m1!4b1!4m5!3m4!1s0x9662cf666838327f:0x8c87dd4bbc19a485!8m2!3d-33.4221174!4d-70.6118906" target="_blank">las Urbinas 53, Providencia, RM</a>
+    <a href="mailto:rodrigocc60@email.com">rodrigocc60@gmail.com</a>
+    <a href="https://api.whatsapp.com/send/?phone=56988792181&text&app_absent=0">+56988792181</a>
+    <a href="contacto.html" target="_blank">Contacto</a>
+     </div>
+
+
+     <div class="box__footer">
+        <h2>Redes Sociales</h2>
+        <a href="https://facebook.com/"><i class="fab fa-facebook-square"></i> Facebook</a>
+        <a href="https://twitter.com/"><i class="fab fa-twitter-square"></i> Twitter</a>
+        <a href="https://www.instagram.com/"><i class="fab fa-instagram-square"></i> Instagram</a>
+     </div>
+
+</div>
+
+<div class="box__copyright">
+    <hr>
+    <p>Todos los derechos reservados © 2021 <b>The Chilean Burguer</b></p>
+</div>
+
+
+</footer>
+<!--fin footer-->
+
+<!--boton flotante-->
+<a href="https://api.whatsapp.com/send?phone=56988792181" class="btn-wsp" target="_blank">
+    <i class="fa fa-whatsapp icono"></i>
+</a>
+<!--boton flotante-->
+
+<!--JS-->
+<script src="javascript/funciones.js"></script>
+<!--JS-->
+</body>
+</html>

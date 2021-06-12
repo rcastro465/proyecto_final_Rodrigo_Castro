@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Chilean Burger</title>
+    <link rel="stylesheet" href="css/estilos.css"> <!--ESTILOS generales-->
+    <link rel="stylesheet" href="css/movil.css" media="(min-width: 100px) and (max-width:480px)"><!--ESTILOS css movil-->
+    <link rel="stylesheet" href="css/tablet.css" media="(min-width: 481px) and (max-width:999px)"><!--ESTILOS css tablet-->
+    <link rel="icon" type="image/png" sizes="16x16" href="multimedia/favicon-32x32.png"><!-- icono favicon -->
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script><!-- iconos wsp y RR.SS-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script><!--ESTILOS Alerts con estilos-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet"> <!--tipo de fuente-->
+
+</head>
+<body>
+ 
+  <header>
+
+    <!--menu principal-->
+    <nav class="contenedor">
+
+  <div class="logo">
+      <img src="multimedia/12105995_896986323725900_2681271618348409823_n.png" alt="">
+  </div>
+  <div class="enlaces">
+    <a href="index.html">INICIO</a>
+    <a href="menu.html">MENÚ</a>
+    <a href="sucursales.html">SUCURSALES</a>
+    <a href="nosotros.html">QUIENES SOMOS</a>
+    <a href="#">CONTACTO</a>
+    <a class="cta" href="#">ENTRAR <img class="user-icon" src="multimedia/user-pin-regular-48.png"></a>
+    <a href="#miModalcar"><img class="carro-icon" src="multimedia/cart-regular-48.png"></a>
+   </div> 
+
+ <div class="hamburguesa">
+ <img src="multimedia/menu-alt-right-regular-48.png" alt="" id="hamburguesa">
+  </div>
+
+      </nav>
+    <!-- fin menu principal-->
+
+</header>
+
+<!--MODAL login-->
+<div class="modal-container" id="modal-container">
+  <form action="#" method="post">
+ <div class="modal modal-close" id="modal">
+ <p class="close">X</p>
+ <img class="img-login" src="multimedia/prueba-logo.png" alt="">
+
+ <h2>Iniciar sesión</h2>
+ <h6>¿Eres nuevo en este sitio?<a href="#miModalNewRegistro" class="close3"> Regístrate</a></h6>
+  
+ <label class="label-log">Email</label>
+ <input class="input-text" type="email" placeholder="Ingrese su email" required name="user" id="user-log">
+ <p id="msguser" class="alerta"></p>
+ <label class="label-log">Contraseña</label>
+ <input class="input-text" type="password" placeholder="Ingrese su Contraseña" required name="pass" id="pass-log">
+ <p id="msgpass" class="alerta"></p>
+ <input class="btn-login" type="button" name="button" value="Ingresar" onclick="ValidarLogin()" id="btn-log">
+ <a href="#miModalPass" class="close2">¿Olvidó su contraseña?</a>
+
+ </div>
+</form>
+</div>
+<!--FIN login-->
+
+<!--modal recuperar contraseña-->
+<div id="miModalPass" class="modal-2">
+  <div class="modal-contenido-car2" id="modal-contenido-car2">
+   <form action="#" method="post">
+    <div class="descrip">
+      <a class="cerrar-modal-pass" href="#">X</a>
+      <img class="menu-modal-img" src="multimedia/prueba-logo.png" alt="">
+    <h2 class="title-modalm">Recuperar contraseña</h2>
+    <p>Email:</p>
+    <div class="boton-restore">
+    <input class="email-reset" type="email" placeholder="Ingrese email" id="email-pass">
+    </div>
+    <p>A continuación, procederá a resetear su contraseña.
+      Recuerde que para recuperar la contraseña , su correo debe haber sido creado o actualizado.</p>
+      <div class="boton-restore">
+    <input class="button-reset" type="button" value="Recuperar Contraseña" onclick="Recuperar_pass()" id="btn-restore-pass">
+    <p id="msgrecuperar" class="alerta"></p>
+    </div>
+  </div>
+</form>
+  </div>  
+</div>
+<!--modal recuperar contraseña-->
+
+<!--modal nuevo registro-->
+<div id="miModalNewRegistro" class="modal-2">
+  <div class="modal-contenido-car3" id="modal-contenido-New">
+   <form action="#" method="post">
+    <div class="descrip-reg">
+      <a class="cerrar-modal-pass" href="#">X</a>
+      <img class="menu-modal-img-new" src="multimedia/prueba-logo.png" alt="">
+    <h2 class="title-modalm-new">NUEVOS CLIENTES</h2>
+    <p>Email: <input type="email" required name="nombrecompleto" maxlength="30" class="input-registro" id="email-new"></p>
+    <p id="msgnew" class="alerta-new"></p>
+    <p>Contraseña: <input type="password" maxlength="20" required name="nombrecompleto" class="input-registro" id="pass-1"></p>
+    <p id="msgnewp1" class="alerta-new"></p>
+    <p>Confirmar Contraseña: <input type="password" maxlength="20" required name="nombrecompleto" class="input-registro" id="pass-2"></p>
+    <p id="msgnewp2" class="alerta-new"></p>
+    <p>Nombre: <input type="text" name="nombrecompleto" maxlength="30" required class="input-registro" id="nombrenew"></p>
+    <p id="msgnewname" class="alerta-new"></p>
+    <p>Apellido: <input type="text" name="nombrecompleto" maxlength="30" required class="input-registro" id="apellidonew"></p>
+    <p id="msgnewape" class="alerta-new"></p>
+    <p>Rut: <input type="text" name="nombrecompleto" maxlength="10" required class="input-registro" id="rutnew"></p>
+    <p id="msgnewrut" class="alerta-new"></p>
+
+   <p >Sexo*<select class="option-sex" id="sexoption">
+     <option>Femenino</option>
+     <option>Masculino</option>
+   </select></p>
+   <input type="checkbox" name="news" id="checknews"><label class="check-sex" > Deseo recibir ofertas por e-mail </label>
+      <div class="boton-restore">
+    <input class="button-new-reg" type="button" value="Crear Cuenta" onclick="CrearCuenta()" id="btn-new-registro">
+    
+    </div>
+  </div>
+</form>
+  </div>  
+</div>
+<!--modal recuperar contraseña-->
+
+
+<!--client width-->
+<label class="slider-contenedora"></label>
+  <label class="slider-test"></label>
+<!--fin client width-->
+
+<!--banner contacto-->
+<div class="banner-contact">
+<img src="multimedia/portada.png">
+<div class="txt-contact">
+  <p>CONTACTO</p>
+   
+   </div>
+</div>
+<!--banner contacto-->
+
+<h3 class="contact-text">SI QUIERES COMUNICARTE CON NOSOTROS<br> INGRESA TUS DATOS EN EL SIGUIENTE FORMULARIO<br>Un ejecutivo responderá a la brevedad tu mensaje</h3>
+
+<!--formulario-->
+<div id="container-form">
+  <h1>&bull; Pongamonos en Contacto &bull;</h1>
+  <div class="underline">
+  </div>
+  <div class="icon_wrapper">
+  <img src="multimedia/prueba-logo.png">
+  </div>
+  <form action="#" method="post" id="contact_form">
+    <div class="name">
+      <label for="name"></label>
+      <input class="input-text-form" type="text" placeholder="Ingrese su Nombre y Apellido" name="name" id="name_input" required>
+      <p id="msgNombre" class="alerta"></p>
+    </div>
+    <div class="email">
+      <label for="email"></label>
+      <input class="input-text-form" type="email" placeholder="Ingrese su Correo" name="email" id="email_input" required>
+      <p id="msgCorreo" class="alerta"></p>
+    </div>
+    <div class="telephone">
+      <label for="name"></label>
+      <input class="input-text-form" type="text"  onkeypress="return validaNumericos(event)" placeholder="Ingrese su Teléfono" maxlength="9" name="telephone" id="telephone_input" required>
+      <p id="msgNumero" class="alerta"></p>
+    </div>
+    <div class="subject">
+      <label for="subject"></label>
+      <select placeholder="Asunto" name="subject" id="subject_input" required>
+        <option disabled hidden selected>Asunto</option>
+        <option>Felicitaciones</option>
+        <option>Reclamos</option>
+        <option>Sugerencias</option>
+        <option>Trabaja con Nosotros</option>
+      </select>
+      <p id="msgCurso" class="alerta"></p>
+    </div>
+    <div class="message">
+      <label for="message"></label>
+      <textarea name="message" placeholder="Mensaje" id="message_input" cols="30" rows="5" required></textarea>
+      <p id="msgDescripcion" class="alerta"></p>
+    </div>
+    <div class="submit">
+      <input type="buttom" value="Enviar" readonly onclick="ValidarInformacion()" id="form_button" />
+      
+
+    </div>
+  </form><!-- // End form -->
+</div><!-- // End #container -->
+
+<!--formulario-->
+
+
+<!--modal carro de compra-->
+<div id="miModalcar" class="modal-2">
+  <div class="modal-contenido-car">
+
+
+    
+    <div class="descrip">
+      <a class="cerrar-modal" href="#onion">X</a>
+      <img class="menu-modal-img" src="multimedia/prueba-logo.png" alt="">
+    <h2 class="title-modalm">Próximamente</h2>
+    <p>GRAN LANZAMIENTO</p>
+    <p>TIENDA ONLINE</p>
+    <p>Paga con webpay y recibe directamente en la puerta de tu casa</p>
+    <img class="menu-modal-img-3" src="multimedia/webpay3.png" alt="">
+  </div>
+  </div>  
+</div>
+<!--modal carro de compra-->
+
+
+  <!--inicio footer-->
+
+<footer>
+  <div class="container_footer">
+   <div class="box__footer">
+       <div class="logo">
+           <img src="multimedia/logo.png" alt="">
+               </div>
+               <div class="terms">
+                  Somos una pyme familiar dedicada al rubro de la venta de comida rápida gourmet donde buscamos entregarles a nuestros clientes una experiencia en sabores inigualable.
+               </div>
+   </div>
+  
+   <div class="box__footer">
+  <h2>Encuentranos en</h2>
+  <a class="delivery-link" href="#"><img class="delivery" src="multimedia/rappi-logo.png"></a>
+  <a class="delivery-link" href="#"><img class="delivery" src="multimedia/pedidosya.png"></a>
+  <a class="delivery-link" href="#"><img class="delivery" src="multimedia/uber.png"></a>
+   </div>
+  
+   <div class="box__footer">
+      <h2>Contactanos</h2>
+      <a href="https://www.google.com/maps/place/Las+Urbinas+53,+Providencia,+Regi%C3%B3n+Metropolitana/@-33.4221174,-70.6140793,17z/data=!3m1!4b1!4m5!3m4!1s0x9662cf666838327f:0x8c87dd4bbc19a485!8m2!3d-33.4221174!4d-70.6118906" target="_blank">las Urbinas 53, Providencia, RM</a>
+      <a href="mailto:rodrigocc60@email.com">rodrigocc60@gmail.com</a>
+      <a href="https://api.whatsapp.com/send/?phone=56988792181&text&app_absent=0">+56988792181</a>
+      <a href="contacto.html" target="_blank">Contacto</a>
+       </div>
+  
+  
+       <div class="box__footer">
+          <h2>Redes Sociales</h2>
+          <a href="https://facebook.com/"><i class="fab fa-facebook-square"></i> Facebook</a>
+          <a href="https://twitter.com/"><i class="fab fa-twitter-square"></i> Twitter</a>
+          <a href="https://www.instagram.com/"><i class="fab fa-instagram-square"></i> Instagram</a>
+       </div>
+  
+  </div>
+  
+  <div class="box__copyright">
+      <hr>
+      <p>Todos los derechos reservados © 2021 <b>The Chilean Burguer</b></p>
+  </div>
+  
+  
+  </footer>
+  <!--fin footer-->
+
+  <!--boton flotante-->
+<a href="https://api.whatsapp.com/send?phone=56988792181" class="btn-wsp" target="_blank">
+  <i class="fa fa-whatsapp icono"></i>
+  </a>
+  <!--boton flotante-->
+
+  <!--JS-->
+<script src="javascript/funciones.js"></script>
+<!--JS-->
+</body>
+</html>
